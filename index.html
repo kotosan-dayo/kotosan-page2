@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ことさんのページ</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: "Noto Sans JP", sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #A1A3A6;
+      color: black;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .menu-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+      user-select: none;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      margin: 0;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: 100%;
+    }
+
+    nav button.active {
+      border-bottom: 3px solid #4a90e2;
+      font-weight: bold;
+      color: #4a90e2;
+    }
+
+    nav button:hover {
+      background: #f0f0f0;
+    }
+
+    section {
+      display: none;
+      padding: 2rem;
+      animation: fadein 0.4s;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    @keyframes fadein {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    main {
+      flex: 1;
+    }
+
+    footer {
+      background: #eee;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 0;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      nav button {
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;">
+    <img src="https://raw.githubusercontent.com/kotosan-dayo/kotosan-page2/main/pictures/kotosan_dayo%20icon.png" 
+         alt="ことさんのアイコン" 
+         width="40" height="40" 
+         style="border-radius: 50%; object-fit: cover;">
+    <span>ことさんのホームページ</span>
+  </div>
+  <div class="menu-toggle">☰</div>
+</header>
+
+  <nav>
+    <ul>
+      <li><button class="tab-button active" data-tab="home">ホーム</button></li>
+      <li><button class="tab-button" data-tab="profile">プロフィール</button></li>
+      <li><button class="tab-button" data-tab="team">布陣</button></li>
+      <li><button class="tab-button" data-tab="links">リンク</button></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="home" class="active">
+      <h2>ようこそ！</h2>
+      <p>こんにちは、ことさんです！<br>
+      ガジェット，ペルソナ３リロード，ぼっちざろっくが大好きな中学生です。<br>
+      このサイトはちょっと前に作ったkotosan-pageをChatGPTに作り直してもらったサイトです</p>
+    </section>
+
+    <section id="profile">
+      <h2>プロフィール</h2>
+      <ul>
+        <li>・好きなゲーム:ペルソナ3リロード，プロセカ，マイクラ，モンハンなどなど</li>
+        <li>・好きなアニメ:ぼっちざろっく，タコピーの原罪などなど</li>
+        <li>・大好きなYouTuberさん:xp2000さん←この方のおかげでパソコンとかに本格的に興味を持ち始めた</li>
+      </ul>
+    </section>
+
+    <section id="team">
+      <h2>布陣（2025/8月更新済み）</h2>
+      <h3>📱スマホ</h3>
+      <ul>
+        <li>メインスマホ: iPhone SE3 64GB</li>
+        <li>サブスマホ: iPhone XR 64GB</li>
+      </ul>
+
+      <h3>💻PC</h3>
+      <ul>
+        <li>メイン: LAVIEのノートPC（詳しい型番忘れました）</li>
+        <li>ゲーム用: ROG ALLY Z1 extreme（初代）</li>
+      </ul>
+
+      <h3>自宅鯖</h3>
+      <ul>
+        <li>NAS 1</li>
+        <li>CPU: Core i7 3770</li>
+        <li>RAM: 8GB</li>
+        <li>HDD: 500GB ×2, 1TB（外付け）</li>
+        <li>GPU: AMDの何か(タスクマネージャに出てこなかったので詳しくはわかりません)</li>
+        <li>OS: Ubuntu server</li>
+      </ul>
+
+      <ul>
+        <li>NAS 2</li>
+        <li>CPU: XEON（詳しい型番忘れました）</li>
+        <li>RAM: 16GB</li>
+        <li>HDD: 2TB</li>
+        <li>GPU: Quadoro P4000</li>
+        <li>OS: Windows 11 Pro</li>
+      </ul>
+    </section>
+
+    <section id="links">
+      <h2>リンク</h2>
+      <ul>
+        <li><a href="https://twitter.com/kotosan_dayo" target="_blank">Twitter(X)のメイン垢</a></li>
+        <li><a href="https://twitter.com/kotosan_dane" target="_blank">Twitter(X)のサブ垢</a></li>
+        <li><a href="https://kotosan-page.pages.dev" target="_blank">kotosan-page（初代）</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 ことさんのページ
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-button');
+    const sections = document.querySelectorAll('section');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.add('active');
+
+        if (window.innerWidth <= 768) {
+          nav.classList.remove('active');
+        }
+      });
+    });
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
