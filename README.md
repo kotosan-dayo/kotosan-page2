@@ -3,4 +3,4 @@
 <h3>リンク</h3>
 <p>Twitter（X）→https://x.com/kotosan_dayo?s=21</p>
 <p>ことさんのホームページ（初代）※急にページを消す可能性もあります→https://kotosan-page.pages.dev/</p>
-<li><a href="https://kotosan-dayo.github.io/kotosan-page2" #="_blank">ページにアクセス</a></li>
+<li><a href="https://kotosan-dayo.github.io/kotosan-page2" #="_blank">ことさんのホームページ2にアクセス！！</a></li>
