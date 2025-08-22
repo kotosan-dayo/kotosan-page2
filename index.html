@@ -245,29 +245,27 @@ section {
     © 2025 ことさんのページ
   </footer>
 
-  <script>
-    const buttons = document.querySelectorAll('.tab-button');
-    const sections = document.querySelectorAll('section');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
+<script>
+  const buttons = document.querySelectorAll('.tab-button');
+  const sections = document.querySelectorAll('section');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
 
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        buttons.forEach(btn => btn.classList.remove('active'));
-        sections.forEach(sec => sec.classList.remove('active'));
-        button.classList.add('active');
-        document.getElementById(button.dataset.tab).classList.add('active');
-
-        if (window.innerWidth <= 768) {
-          nav.classList.remove('active');
-        }
-      });
+  // ボタン押したらそのセクションへスクロール
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      sections[index].scrollIntoView({ behavior: "smooth" });
+      if (window.innerWidth <= 768) {
+        nav.classList.remove('active'); // スマホ時はメニュー閉じる
+      }
     });
+  });
 
-    menuToggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
-  </script>
+  // 三本線メニューの開閉
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
 
 </body>
 </html>
